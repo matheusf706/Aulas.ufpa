@@ -1,0 +1,18 @@
+Algoritmo "semnome"
+
+Var
+   N, i, resultado: Inteiro
+
+Inicio
+   Escreva("Digite um número inteiro: ")
+   Leia(N)
+   resultado <- 1
+
+   Para i de 1 até N faça
+      resultado <- resultado * i
+   FimPara
+
+   Escreva("O resultado da multiplicação é: ", resultado)
+
+
+Fimalgoritmo
