@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+
+public class Main {
+
+        public static void main(String[] args) {
+/*      // numeros inteiros = 100, 93456, 255, 120, 1, 9193949494949393
+        byte => 8 bits => -128 a 127
+        short => 16 bits => -32768 a 32767
+        int => 32 bits => -2,147,483,648 a 2,147,483,647
+        long => 64 bits => -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807
+        // numeros decimais = 1.2, 3.4, 5.6, 7.8, 9.8
+        // 5.50
+        float => 32 bits => precisão simples
+        double => 64 bits => precisão dupla
+
+        string => representar palavras e frases
+        char => representar um unico caractere => a, b, c, d
+        char meuChar = 'a';
+        meuChar = "matheus";
+
+        boolean => true ou false
+        */
+                   
+       /*  byte b = 100;
+        short s = 10000;
+        int i = 100000;
+        long l = 100000L;
+        float f = 10.5f;
+        double d = 20.5;
+        char c = 'A';
+        String str = "Matheus";
+        boolean bool = true;*/
+
+        String[] nomesArr = new String[10]; 
+
+        nomesArr[0] = "Matheus";
+        
+        nomesArr[1] = "João";
+
+        nomesArr[2] = "Maria";
+
+        nomesArr[8] = "ana";
+
+        ArrayList<String> nomes = new ArrayList<>();
+        nomes.add("Matheus");
+        nomes.add("João");
+        nomes.add("Maria");
+        nomes.add("ana");
+/*
+        System.out.println(nomes.get(0));
+
+        nomes.remove(0);
+
+        System.out.println(nomes.get(0)); */
+
+   /*      for (int meuIterador = 0; meuIterador < nomesArr.length; meuIterador++){
+            System.out.println(nomesArr[meuIterador]);
+        }*/
+
+        for (String nome : nomes){
+            System.out.println(nome);
+        }
+        
+
+        int contador = 0;
+        while(contador < 10){
+            System.out.println("Estou no while");
+            contador++;
+        } 
+        
+        double resultado = 0.0;
+        int resultadoInt = (int) resultado;
+
+
+        int meuInt = 10;
+        double meuDouble = meuInt;
+    }
+}
