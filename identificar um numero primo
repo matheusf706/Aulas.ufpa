@@ -1,0 +1,31 @@
+Algoritmo "semnome"
+
+Var
+   n, i, contDivisores : inteiro
+   ehPrimo : logico
+Inicio
+   escreva("Digite um número inteiro: ")
+   leia(n)
+
+   se n <= 1 entao
+      ehPrimo <- falso
+   senao
+      ehPrimo <- verdadeiro
+      para i de 2 ate Int(RaizQ(n)) faca
+         se n % i = 0 entao
+            ehPrimo <- falso
+            interrompa // Sai do laço se achar divisor
+         fimse
+         se i >= n entao
+            interrompa
+         fimse
+      fimpara
+   fimse
+
+   se ehPrimo entao
+      escreval("O número ", n, " é PRIMO.")
+   senao
+      escreval("O número ", n, " NÃO é primo.")
+   fimse
+
+Fimalgoritmo
