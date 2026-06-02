@@ -1,0 +1,87 @@
+"""
+lista= []
+print(type(lista))
+print("tamanho", len(lista))
+"""
+
+"""
+lista= [10, 5, 1]
+print("tamanho", len(lista))
+print((lista))
+print(lista[0])
+print(lista[len(lista) - 1])
+
+for i in range (len(lista)):
+    print(lista[i])
+
+lista.append(int(input()))
+"""
+
+"""
+from random import randint
+lista= []
+for i in range (6):
+    #lista.append(int(input("Digite um valor: ")))
+    lista.append(randint(1, 20))
+print(lista)
+
+for i in range (len(lista)):
+    print(lista [i], end=" ")
+print()
+
+meio=len(lista)//2
+print(lista[meio])
+
+maior= lista[0]
+for i in range (len(lista)):
+   if lista[i] > maior:
+    maior=lista[i]
+
+print("Este é o maior valor", maior)
+
+menor= lista[0]
+for i in range (len(lista)):
+   if lista[i] < menor:
+    menor=lista[i]
+
+print("Este é o menor valor", menor)
+
+print("Essa é a soma da lista:", lista[0] + lista[1] + lista[2] + lista[3] + lista[4] + lista[5])
+"""
+
+#sorte Exemplo 2
+
+"""
+from random import randint
+
+dado=[]
+for i in range(20):
+    dado.append(randint(1, 6))
+print(dado)
+Lado1= 0
+Lado2= 1
+Lado3= 2
+Lado4= 3
+Lado5= 4
+Lado6= 5
+for i in range (20):
+    if dado[i]==1:
+        Lado1=Lado1+1
+    elif dado[i]==1:
+        Lado2=Lado2+1
+    elif dado[i]==1:
+        Lado3=Lado3+1
+    elif dado[i]==1:
+        Lado4=Lado4+1
+    elif dado[i]==1:
+        Lado5=Lado5+1
+    elif dado[i]==1:
+        Lado6=Lado6+1
+
+print("1: ", Lado1/20)
+print("2: ", Lado2/20)
+print("3: ", Lado3/20)
+print("4: ", Lado4/20)
+print("5: ", Lado5/20)
+print("6: ", Lado6/20)
+"""
