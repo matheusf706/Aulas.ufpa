@@ -1,0 +1,120 @@
+#Simulador de memoria ram
+class SimuladorMemoriaBinaria:
+    def __init__(self, tamanho=15):
+        self.tamanho = tamanho
+        self.memoria = {i: "00000000" for i in range(tamanho)}
+
+    def binario_para_decimal(self, binario_str):
+        try:
+            return int(binario_str, 2)
+        except ValueError:
+            return None
+
+    def decimal_para_binario(self, numero_decimal):
+        try:
+            return f"{int(numero_decimal):08b}"
+        except (ValueError, TypeError):
+            return None
+
+    def validar_binario(self, string):
+        return all(char in '01' for char in string) and len(string) > 0
+
+    def gravar_binario(self, endereco, valor_binario):
+        if endereco not in self.memoria:
+            print(f"\n[ERRO] Endereço {endereco} inválido! Limite: 0 a {self.tamanho - 1}.")
+            return False
+
+        if not self.validar_binario(valor_binario):
+            print(f"\n[ERRO] '{valor_binario}' não é um número binário válido! Use apenas 0 e 1.")
+            return False
+
+        self.memoria[endereco] = valor_binario
+        print(f"\n[SUCESSO] Binário '{valor_binario}' salvo no endereço {endereco}.")
+        
+        self.exibir_tudo()
+        return True
+
+    def ler(self, endereco):
+        if endereco not in self.memoria:
+            print(f"\n[ERRO] Endereço {endereco} inválido!")
+            return
+
+        valor_binario = self.memoria[endereco]
+
+        if valor_binario is None:
+            print(f"\n[AVISO] Endereço {endereco} está vazio.")
+            return
+
+        valor_decimal = self.binario_para_decimal(valor_binario)
+        print(f"\n[LEITURA] Endereço {endereco}:")
+        print(f"  -> Valor Binário: {valor_binario}")
+        print(f"  -> Valor Decimal: {valor_decimal}")
+
+    def exibir_tudo(self):
+        print("\n================== MAPA DA MEMÓRIA ==================")
+        print(f"{'Endereço':<10} | {'Conteúdo Binário':<18} | {'Valor Decimal':<13}")
+        print("-" * 53)
+        for endereco, dado in self.memoria.items():
+            if dado is not None:
+                dec = self.binario_para_decimal(dado)
+                print(f"End {endereco:02d}     | {dado:<18} | {dec:<13}")
+            else:
+                print(f"End {endereco:02d}     | {'[00000000]':<18} | {'-':<13}")
+        print("=====================================================")
+
+if __name__ == "__main__":
+    ram = SimuladorMemoriaBinaria(tamanho=15)
+
+    while True:
+        print("\n--- MENU DE OPERAÇÕES ---")
+        print("1. Gravar valor em Binário")
+        print("2. Ler endereço da Memória")
+        print("3. Converter Decimal para Binário")
+        print("4. Converter Binário para Decimal")
+        print("5. Exibir Mapa de Memória Atual")
+        print("6. Sair do programa")
+        
+        opcao = input("\nEscolha uma opção (1-6): ").strip()
+
+        if opcao == "1":
+            try:
+                end = int(input(f"Digite o endereço (0 a {ram.tamanho - 1}): "))
+                valor = input("Digite o valor em binário (Ex: 00001010): ").strip()
+                ram.gravar_binario(end, valor)
+            except ValueError:
+                print("\n[ERRO] Por favor, digite um número inteiro válido para o endereço.")
+
+        elif opcao == "2":
+            try:
+                end = int(input(f"Digite o endereço para leitura (0 a {ram.tamanho - 1}): "))
+                ram.ler(end)
+            except ValueError:
+                print("\n[ERRO] Por favor, digite um número inteiro válido para o endereço.")
+
+        elif opcao == "3":
+            try:
+                num_dec = int(input("Digite um número decimal inteiro: "))
+                resultado = ram.decimal_para_binario(num_dec)
+                print(f"\n[CONVERSÃO] Decimal {num_dec} -> Binário: {resultado}")
+            except ValueError:
+                print("\n[ERRO] Por favor, insira um número decimal inteiro válido.")
+
+        elif opcao == "4":
+            valor_bin = input("Digite o número binário: ").strip()
+            if ram.validar_binario(valor_bin):
+                resultado = ram.binario_para_decimal(valor_bin)
+                print(f"\n[CONVERSÃO] Binário {valor_bin} -> Decimal: {resultado}")
+            else:
+                print("\n[ERRO] Entrada inválida. Digite apenas 0s e 1s.")
+
+        elif opcao == "5":
+            ram.exibir_tudo()
+
+        elif opcao == "6":
+            print("\nEncerrando o simulador de memória. Até mais!")
+            break
+            
+        else:
+            print("\n[ERRO] Opção inválida! Escolha um número de 1 a 6.")
+        
+        input("\nPressione [ENTER] para continuar...")
