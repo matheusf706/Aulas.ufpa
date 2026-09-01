@@ -1,0 +1,61 @@
+/* #include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Olá Mundo em C++!" << ends;
+    return 0;
+} */
+
+// somando 
+/* #include <iostream>
+using namespace std;
+
+int somar(int a, int b) {
+    return a + b;
+}
+
+int main(){
+    int resultado = somar(5, 3);
+    cout << "A soma é: " << resultado << ends;
+    return 0;
+} */
+
+// multiplicando
+/* #include <iostream>
+using namespace std;
+
+int multiplicar(int a, int b) {
+    return a * b;
+}
+
+int main(){
+    int resultado = multiplicar(8, 4);
+    cout << "A multiplicação é: " << resultado << ends;
+    return 0;
+} */
+
+/* #include <iostream>
+using namespace std;
+
+int divisão(int a, int b){
+    return a / b;
+}
+
+int main(){
+    int resultado = divisão(10, 5);
+    cout << "A divisão é: " << resultado << ends;
+    return 0;
+} */
+
+#include <iostream>
+using namespace std;
+
+int subtração( int a, int b){
+    return a - b;
+}
+
+int main(){
+    int resultado = subtração(459, 137);
+    cout << "A subtração é: " << resultado << ends;
+    return 0;
+}
