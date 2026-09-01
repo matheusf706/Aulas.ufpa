@@ -55,7 +55,14 @@ int subtração( int a, int b){
 }
 
 int main(){
-    int resultado = subtração(459, 137);
-    cout << "A subtração é: " << resultado << ends;
+    int num1, num2;
+    int subtração;
+
+    std::cout<< "Digite 2 números: ";
+    std::cin>> num1>> num2;
+    
+    subtração = num1 - num2;
+
+    std::cout<< "A subtração é: " << subtração << std::ends;
     return 0;
 }
