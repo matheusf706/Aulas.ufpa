@@ -1,0 +1,13 @@
+#include <iostream>
+
+int main() {
+    int n, result;
+    
+    std::cout <<" Digite 1 número: ";
+    std::cin >> n;
+    
+    result = n * 2;
+    
+    std::cout <<"O resultado é: " << result << std::ends;
+    return 0;
+}
