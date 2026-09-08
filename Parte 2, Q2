@@ -1,0 +1,17 @@
+#include <iostream>
+
+int main() {
+    int numero, quadrado, parte;
+    
+    std::cout <<"Digite 1 número: ";
+    std::cin >> numero;
+    
+    quadrado = numero * numero;
+    
+    parte = quadrado / 5;
+    
+    std::cout <<"O quadrado é igual a: " << quadrado;
+    
+    std::cout <<"\nA quinta parte é igual a: " << parte << std::ends;
+    return 0;
+}
