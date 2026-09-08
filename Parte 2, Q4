@@ -1,0 +1,14 @@
+#include <iostream>
+
+int main(){
+    float valori, valord, valorf;
+    
+    std::cout << "Valor inicial do produto: ";
+    std:: cin >> valori;
+    
+    valord = valori * 0.12;
+    valorf = valori - valord;
+    
+    std::cout <<"O valor após o desconto é: " << valorf << std::ends;
+    return 0;
+}
