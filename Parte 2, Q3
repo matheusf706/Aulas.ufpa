@@ -1,0 +1,27 @@
+#include <iostream>
+
+int main() {
+    double nota1, nota2, nota3;
+    double peso1, peso2, peso3;
+    double mediaPonderada;
+
+    std::cout << "Digite a primeira nota: ";
+    std::cin >> nota1;
+    std::cout << "Digite o peso da primeira nota: ";
+    std::cin >> peso1;
+
+    std::cout << "Digite a segunda nota: ";
+    std::cin >> nota2;
+    std::cout << "Digite o peso da segunda nota: ";
+    std::cin >> peso2;
+
+    std::cout << "Digite a terceira nota: ";
+    std::cin >> nota3;
+    std::cout << "Digite o peso da terceira nota: ";
+    std::cin >> peso3;
+
+    mediaPonderada = ((nota1 * peso1) + (nota2 * peso2) + (nota3 * peso3)) / (peso1 + peso2 + peso3);
+    
+    std::cout << "\nA media ponderada do aluno e: " << mediaPonderada << std::endl;
+    return 0;
+}
