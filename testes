@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+/*int main(){
+    string Aluno;
+    double nota1, nota2, nota3, media;
+    
+    cout <<"Nome do aluno: ";
+    cin >> Aluno;
+    cout <<"Notas do aluno:\n";
+    cin >> nota1>>nota2>>nota3;
+
+    media = (nota1 + nota2 + nota3) / 3;
+
+    cout <<"As notas do aluno foram: " << nota1 <<", " << nota2 <<" e " <<nota3;
+    cout <<"\nA media do aluno foi: " << media << endl;
+    
+    if (media >= 9){
+        cout <<"Conceito excelente. Não fez mais que sua obrigação." << endl;
+    }
+    else if (media >= 7){
+        cout <<"Você passou, mas poderia ser melhor..." << endl;
+    }
+    else {
+        cout <<"Você foi reprovado, que decepção..." << endl;
+    }
+} */
+
+int main(){
+    int a, b, c;
+    double p, area;
+    
+    cout <<"Lados do triângulo:\n";
+    cin >> a>> b>> c;
+    
+    p = (a + b + c) / 2;
+    area = sqrt(p*(p-a)*(p-b)*(p-c));
+    
+    cout <<"A area é: " << area << endl;
+    return 0;
+}
