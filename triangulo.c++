@@ -19,5 +19,12 @@ int main(){
         area = sqrt(p*(p - a)*(p - b)*(p - c));
         cout <<"A area do triangulo é:" << area << endl;
     }
+    if ((a == b) and (a and b != c)){
+        cout <<"O triangulo é isosceles!" << endl;
+    } else if ((a != b) and (b != c)){
+        cout <<"O triangulo é escaleno!" << endl;
+    } else if ((a == b) and (b == c)){
+        cout <<"O triangulo é equilatero!" << endl;
+    }
     return 0;
 }
